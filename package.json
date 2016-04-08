@@ -1,0 +1,30 @@
+{
+  "name": "js-yield",
+  "version": "0.0.0",
+  "description": "implement yield with javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaozj/js-yield.git"
+  },
+  "keywords": [
+    "yield",
+    "js"
+  ],
+  "author": "shaozj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaozj/js-yield/issues"
+  },
+  "homepage": "https://github.com/shaozj/js-yield#readme",
+  "dependencies": {
+    "supertest": "0",
+    "mocha": "1"
+  },
+  "scripts": {
+    "test": "mocha --harmony-generators --reporter spec --bail */test.js"
+  }
+}
