@@ -2,7 +2,7 @@
 * implement yield with javascript
 */
 
-function yield(value, rest) {
+exports.yield = yield = function yield(value, rest) {
   return {
     value: value,
     _rest: rest,
@@ -24,7 +24,7 @@ function numSeq(n) {
   })
 }
 
-function yieldSeq(iter, rest) {
+exports.yieldSeq = yieldSeq = function yieldSeq(iter, rest) {
   if (!rest) return iter;
   if (!iter) return rest();
 
@@ -39,5 +39,11 @@ function yieldSeq(iter, rest) {
 yieldSeq._next = function () {
   return yieldSeq(this._iter.next(), this._rest);
 }
+
+for (var iter = numSeq(0); iter; iter = iter.next()) {
+  console.log(iter.value);
+  if (iter.value >= 9) return;
+}
+
 
 
