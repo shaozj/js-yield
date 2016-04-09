@@ -32,3 +32,24 @@ describe('fib sequence', function () {
     assert.equal(20, sum);
   })
 })
+
+function numSeq(n) {
+  return yield(n, function () {
+    return yieldSeq(numSeq(n + 1));
+  })
+}
+
+var resArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+var seq = [];
+
+describe('number sequence', function () {
+  it('should return number sequence', function () {
+    for (var iter = numSeq(0); iter; iter = iter.next()) {
+      seq.push(iter.value);
+      if (iter.value >= 9) break;
+    }
+    for (var i = 0; i < 9; i ++) {
+      assert.equal(resArr[i], seq[i]);  
+    }
+  })
+})
