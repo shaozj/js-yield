@@ -18,18 +18,21 @@ function fibSeq() {
   });
 }
 
-var sum = 0;
+var fib = [0, 1, 1, 2, 3, 5, 8];
+
+var fibArr = [];
 
 describe('fib sequence', function () {
   it('should return fib sequence', function () {
     for (var iter = fibSeq(); iter; iter = iter.next()) {
       if (iter.value <= 8) {
-        sum += iter.value;
+        fibArr.push(iter.value);
       } else {
         break;
       }
     }
-    assert.equal(20, sum);
+    for (var i = 0; i < fib.length; i ++)
+      assert.equal(fib[i], fibArr[i]);
   })
 })
 
